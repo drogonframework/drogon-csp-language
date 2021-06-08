@@ -8,6 +8,10 @@
     "engines": {
       "vscode": "^1.20.0"
     },
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/marty1885/drogon-csp-language.git"
+    },
     "contributes": {
         "languages": [{
             "id": "drogon-csp",
