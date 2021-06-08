@@ -2,7 +2,7 @@
     "name": "drogon-csp-lanuage",
     "displayName": "Drogon CSP",
     "description": "Syntax Highlighting support for Drogon's CSP template files",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "publisher": "marty1885",
     "license": "MIT",
     "engines": {
