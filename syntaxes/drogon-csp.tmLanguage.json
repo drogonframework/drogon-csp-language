@@ -1,0 +1,127 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Drogon CSP",
+	"patterns": [
+		{"include": "#cppcode"},
+		{"include": "#cppinclude"},
+		{"include": "#variable-use"},
+		{"include": "#viewinclude"},
+		{"include": "#layoutinclude"},
+		{"include": "#expression-use"}
+	],
+	"repository": {
+		"cppcode": {
+            "patterns": [{
+				"name": "cppindcude.block.drogon-csp",
+				"begin": "(<%c\\+\\+)",
+				"beginCaptures": {
+					"1":{
+						"name": "keyword.drogon-csp"
+					}
+				},
+				"end": "(%>)",
+				"endCaptures": {
+					"1":{
+						"name": "keyword.drogon-csp"
+					}
+				},
+				"patterns": [{
+					"include": "source.cpp"
+				}]
+			}]
+        },
+
+		"cppinclude": {
+            "patterns": [{
+				"name": "cppinclude.block.drogon-csp",
+				"begin": "(<%inc)",
+				"beginCaptures": {
+					"1":{
+						"name": "keyword.drogon-csp"
+					}
+				},
+				"end": "(%>)",
+				"endCaptures": {
+					"1":{
+						"name": "keyword.drogon-csp"
+					}
+				},
+				"patterns": [{
+					"include": "source.cpp"
+				}]
+			}]
+        },
+
+		"variable-use": {
+            "patterns": [{
+				"name": "variable-use.block.drogon-csp",
+				"match": "(\\[\\[)\\s*(\\w*)\\s*(\\]\\])",
+				"captures": {
+					"1":{
+						"name": "keyword.drogon-csp"
+					},
+					"2": {
+						"name": "variable.drogon-csp"
+					},
+					"3":{
+						"name": "keyword.drogon-csp"
+					}
+				}
+			}]
+        },
+		"viewinclude": {
+            "patterns": [{
+				"name": "viewinclude.block.drogon-csp",
+				"match": "(<%view)\\s*([^\\s]*)\\s*(%>)",
+				"captures": {
+					"1":{
+						"name": "keyword.drogon-csp"
+					},
+					"2": {
+						"name": "variable.drogon-csp"
+					},
+					"3":{
+						"name": "keyword.drogon-csp"
+					}
+				}
+			}]
+        },
+
+		"layoutinclude": {
+            "patterns": [{
+				"name": "layoutinclude.block.drogon-csp",
+				"match": "(<%layout)\\s*([^\\s]*)\\s*(%>)",
+				"captures": {
+					"1":{
+						"name": "keyword.drogon-csp"
+					},
+					"2": {
+						"name": "variable.drogon-csp"
+					},
+					"3":{
+						"name": "keyword.drogon-csp"
+					}
+				}
+			}]
+        },
+
+		"expression-use": {
+            "patterns": [{
+				"name": "expression-use.block.drogon-csp",
+				"match": "(\\{%)\\s*([^\\n\\r]*\\s*)(%\\})",
+				"captures": {
+					"1":{
+						"name": "keyword.drogon-csp"
+					},
+					"2": {
+						"name": "variable.drogon-csp"
+					},
+					"3":{
+						"name": "keyword.drogon-csp"
+					}
+				}
+			}]
+        }
+	},
+	"scopeName": "source.csp"
+}

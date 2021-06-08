@@ -1,0 +1,36 @@
+{
+    "name": "drogon-csp-lanuage",
+    "displayName": "%displayName%",
+    "description": "%description%",
+    "version": "1.0.0",
+    "publisher": "vscode",
+    "license": "MIT",
+    "engines": {
+      "vscode": "^1.20.0"
+    },
+    "contributes": {
+        "languages": [{
+            "id": "drogon-csp",
+            "aliases": ["Drogon CSP", "drogon-csp"],
+            "extensions": [".csp"],
+            "configuration": "./language-configuration.json"
+        }],
+      "grammars": [
+        {
+          "language": "drogon-csp",
+          "scopeName": "source.csp",
+          "path": "./syntaxes/drogon-csp.tmLanguage.json",
+          "embeddedLanguages": {
+            "source.cpp": "cpp",
+            "meta.embedded.block.cpp": "cpp"
+          }
+        },
+        {
+            "path": "./syntaxes/injection.json",
+            "scopeName": "todo-comment.injection",
+            "injectTo": ["text.html.derivative", "text.html.vue"]
+        }
+      ]
+    }
+  }
+  

@@ -1,0 +1,17 @@
+{
+	"scopeName": "todo-comment.injection",
+	"injectionSelector": "L:text.html.derivative, L:text.html.vue",
+	"patterns": [
+		{"include": "#all"}
+	],
+	"repository": {
+		"all": {
+            "patterns": [{
+				"name": "csp.drogon-csp",
+				"patterns": [{
+					"include": "source.csp"
+				}]
+			}]
+        }
+	}
+  }
